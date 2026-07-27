@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Municipal Services for a Better Tomorrow | STACKLY</title>
+  <meta name="description" content="Municipal Services Portal - Transparent, Efficient & Citizen-Centric Governance. Access 50+ services online.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <style>
+    /* Specific Home Styles */
+    .hero-section {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 140px;
+      padding-bottom: 80px;
+      overflow: hidden;
+      background: var(--color-primary);
+    }
+    
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('assets/images/hero.webp') no-repeat center center/cover;
+      opacity: 0.55;
+      z-index: 0;
+    }
+
+    .hero-cm {
+      position: absolute;
+      top: 140px;
+      bottom: 40px;
+      right: 5%;
+      height: calc(100% - 180px);
+      width: 35vw;
+      max-width: 450px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      z-index: 2;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 650px;
+      color: var(--color-white);
+    }
+    
+    .hero-subtitle {
+      color: var(--color-secondary);
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .hero-title {
+      font-size: 4.5rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--color-light-gray);
+      margin-bottom: 2.5rem;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    .hero-search {
+      background: var(--bg-glass-dark);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 10px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      border: var(--border-glass);
+      max-width: 500px;
+    }
+    .hero-search input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--color-white);
+      padding: 0 15px;
+      font-size: 1rem;
+      outline: none;
+    }
+    .hero-search input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+    
+    .hero-stats {
+      display: flex;
+      gap: 4rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--color-white);
+    }
+    .stat-icon {
+      color: var(--color-secondary);
+      font-size: 2rem;
+    }
+    .stat-text h4 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--color-white);
+    }
+    .stat-text p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--color-light-gray);
+      text-transform: uppercase;
+    }
+
+    /* Floating Cards Section */
+    .services-quick {
+      margin-top: -80px;
+      position: relative;
+      z-index: 10;
+    }
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+      height: 100%;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-secondary);
+      font-size: 2rem;
+      transition: all var(--transition-fast);
+    }
+    .service-card:hover .service-icon {
+      background: var(--color-secondary);
+      color: var(--color-white);
+    }
+
+    /* About Section */
+    .about-img-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .about-img-wrap img {
+      border-radius: var(--radius-lg);
+    }
+
+    /* Department Cards */
+    .dept-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all var(--transition-normal);
+      border: 1px solid transparent;
+    }
+    .dept-card:hover {
+      background: var(--color-white);
+      border-color: var(--color-secondary);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: var(--gradient-primary);
+      color: var(--color-white);
+      text-align: center;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .stat-box h3 {
+      font-size: 3.5rem;
+      color: var(--color-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .stat-box p {
+      color: var(--color-light-gray);
+      font-size: 1.1rem;
+    }
+
+    @media(max-width: 1024px) {
+      .hero-title { font-size: 3.5rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 768px) {
+      .hero-cm { display: none; }
+      .hero-overlay { background: rgba(18,18,18,0.85); }
+      .services-quick { margin-top: 2rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1rem; justify-content: space-between; }
+      .stat-item { flex-direction: column; text-align: center; gap: 0.5rem; }
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Animation -->
+  <div id="loader" class="loader-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark">
+    <div class="container">
+      <a href="index.html" class="logo-container" style="display: flex; align-items: center;">
+        <img src="assets/images/logo.webp" alt="Municipal Services Portal Logo" style="height: 40px; width: auto; object-fit: contain;">
+      </a>
+      
+      <div class="nav-links" style="position: absolute; left: 50%; transform: translateX(-50%);">
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="departments.html" class="nav-item">Departments</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="blog.html" class="nav-item">Blog</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </div>
+      
+      <a href="login.html" class="btn btn-secondary" style="padding: 0.5rem 1.5rem;">Login</a>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg hero-parallax"></div>
+    <!-- Placeholder for CM Image -->
+    <img src="assets/images/cm.webp" alt="Chief Minister" class="hero-cm reveal-right" onerror="this.style.display='none'">
+    
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-subtitle">Building Better Communities</span>
+        <h1 class="hero-title">Smart Municipal Services for a Better Tomorrow</h1>
+        <p class="hero-desc">Your one-stop portal for all municipal services. Transparent, Efficient & Citizen-Centric Governance. Access over 50+ services online.</p>
+        
+        <div class="hero-buttons">
+          <a href="services.html" class="btn btn-secondary ripple">Explore Services</a>
+          <a href="login.html" class="btn btn-outline-white ripple">Pay Taxes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Stats Section -->
+  <section class="hero-stats-bar" style="background: var(--color-primary); padding: 2.5rem 0; margin-bottom: 4rem;">
+    <div class="container">
+      <div class="hero-stats reveal" style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; margin-top: 0; gap: 2rem;">
+        <div class="stat-item" style="flex: 1; min-width: 200px; justify-content: center;">
+          <div class="stat-icon">50+</div>
+          <div class="stat-text">
+            <p style="margin: 0; color: var(--color-light-gray);">Services</p>
+          </div>
+        </div>
+        <div class="stat-item" style="flex: 1; min-width: 200px; justify-content: center;">
+          <div class="stat-icon">24/7</div>
+          <div class="stat-text">
+            <p style="margin: 0; color: var(--color-light-gray);">Support</p>
+          </div>
+        </div>
+        <div class="stat-item" style="flex: 1; min-width: 200px; justify-content: center;">
+          <div class="stat-icon">1M+</div>
+          <div class="stat-text">
+            <p style="margin: 0; color: var(--color-light-gray);">Citizens</p>
+          </div>
+        </div>
+        <div class="stat-item" style="flex: 1; min-width: 200px; justify-content: center;">
+          <div class="stat-icon">100%</div>
+          <div class="stat-text">
+            <p style="margin: 0; color: var(--color-light-gray);">Digital</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Services (Cards) -->
+  <section class="services-quick container" style="margin-top: 0;">
+    <div class="grid-3" style="grid-template-columns: repeat(6, 1fr);">
+      <a href="services.html" class="service-card float reveal delay-100" style="grid-column: span 2;">
+        <div class="service-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h4>Birth Certificate</h4>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: var(--color-secondary);">Apply Now <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></p>
+      </a>
+      <a href="services.html" class="service-card float reveal delay-200" style="grid-column: span 2;">
+        <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+        <h4>Property Tax</h4>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: var(--color-secondary);">Pay Online <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></p>
+      </a>
+      <a href="services.html" class="service-card float reveal delay-300" style="grid-column: span 2;">
+        <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+        <h4>Water Supply</h4>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: var(--color-secondary);">New Connection <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></p>
+      </a>
+      <a href="services.html" class="service-card float reveal delay-100" style="grid-column: span 2; animation-delay: 1s;">
+        <div class="service-icon"><i class="fa-solid fa-scroll"></i></div>
+        <h4>Death Certificate</h4>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: var(--color-secondary);">Apply Now <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></p>
+      </a>
+      <a href="services.html" class="service-card float reveal delay-200" style="grid-column: span 2; animation-delay: 1s;">
+        <div class="service-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
+        <h4>Building Approval</h4>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: var(--color-secondary);">Check Status <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></p>
+      </a>
+      <a href="services.html" class="service-card float reveal delay-300" style="grid-column: span 2; animation-delay: 1s;">
+        <div class="service-icon"><i class="fa-solid fa-shop"></i></div>
+        <h4>Trade License</h4>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: var(--color-secondary);">Renew Now <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></p>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section section-light">
+    <div class="container grid-2">
+      <div class="reveal-left">
+        <h2 class="section-title">About Municipality</h2>
+        <p class="section-subtitle" style="margin-left: 0;">Citizen First Approach for a Sustainable Future.</p>
+        <p>The Municipal Services Portal is a unified platform designed to bring all government services to your fingertips. Our vision is to create a transparent, paperless, and highly efficient administration that prioritizes citizen convenience.</p>
+        <p>We are committed to continuous improvement, smart city initiatives, and sustainable development to ensure a high quality of life for all residents.</p>
+        <ul style="margin: 20px 0; padding-left: 20px;">
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #00d25b; margin-right: 8px;"></i> 100% Transparent Governance</li>
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #00d25b; margin-right: 8px;"></i> Secure Digital Infrastructure</li>
+          <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: #00d25b; margin-right: 8px;"></i> Rapid Grievance Redressal</li>
+        </ul>
+        <a href="about.html" class="btn btn-primary ripple mt-4">Learn More About Us</a>
+      </div>
+      <div class="about-img-wrap reveal-right">
+        <!-- Placeholder for About Image -->
+        <div style="width: 100%; height: 400px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+          <img src="assets/images/about.webp" alt="About Municipality" onerror="this.style.display='none'">
+          <span style="color: #666; font-family: var(--font-heading);">Municipal Building Placeholder</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 class="section-title">Municipal Departments</h2>
+        <p class="section-subtitle">Dedicated teams working round the clock to ensure seamless city operations.</p>
+      </div>
+      
+      <div class="grid-3" style="margin-top: 3rem;">
+        <div class="dept-card reveal delay-100">
+          <h3>🩺 Health Department</h3>
+          <p>Ensuring public health, sanitation, and disease control across all municipal zones.</p>
+        </div>
+        <div class="dept-card reveal delay-200">
+          <h3>🛣️ Engineering</h3>
+          <p>Maintenance of roads, bridges, public buildings, and urban infrastructure development.</p>
+        </div>
+        <div class="dept-card reveal delay-300">
+          <h3>💰 Revenue</h3>
+          <p>Collection of property taxes, professional taxes, and issuance of trade licenses.</p>
+        </div>
+        <div class="dept-card reveal delay-100">
+          <h3>🗑️ Sanitation</h3>
+          <p>Solid waste management, street sweeping, and maintaining a clean environment.</p>
+        </div>
+        <div class="dept-card reveal delay-200">
+          <h3>🚰 Water Board</h3>
+          <p>Ensuring uninterrupted supply of clean drinking water and maintaining drainage systems.</p>
+        </div>
+        <div class="dept-card reveal delay-300">
+          <h3>🏙️ Town Planning</h3>
+          <p>Regulating building constructions, urban planning, and smart city project executions.</p>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="departments.html" class="btn btn-outline ripple">View All Departments</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section section-light">
+    <div class="container text-center reveal">
+      <h2 class="section-title">Why Choose Our Portal</h2>
+      <p class="section-subtitle">Experience the future of digital governance with our citizen-centric features.</p>
+      
+      <div class="grid-3" style="margin-top: 4rem;">
+        <div class="reveal-scale delay-100">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+          <h4 style="font-size: 1.2rem;">Fast Processing</h4>
+          <p>Automated workflows ensure your applications are processed in record time.</p>
+        </div>
+        <div class="reveal-scale delay-200">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+          <h4 style="font-size: 1.2rem;">Secure & Private</h4>
+          <p>Your data is protected with state-of-the-art encryption and security protocols.</p>
+        </div>
+        <div class="reveal-scale delay-300">
+          <div style="font-size: 3rem; margin-bottom: 1rem;"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h4 style="font-size: 1.2rem;">Paperless</h4>
+          <p>Apply, track, and download certificates completely online without visiting offices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Statistics -->
+  <section class="section stats-section">
+    <div class="container reveal">
+      <h2 style="color: var(--color-white); margin-bottom: 3rem;">Impact at a Glance</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <h3 class="counter-val" data-target="1500000">0</h3>
+          <p>Citizens Served</p>
+        </div>
+        <div class="stat-box">
+          <h3 class="counter-val" data-target="85000">0</h3>
+          <p>Complaints Solved</p>
+        </div>
+        <div class="stat-box">
+          <h3 class="counter-val" data-target="320">0</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-box">
+          <h3 class="counter-val" data-target="2500000">0</h3>
+          <p>Online Applications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Projects & Announcements -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="grid-2">
+        <div class="reveal-left">
+          <h2 class="section-title">Latest Announcements</h2>
+          <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="glass-card" style="padding: 1.5rem; background: var(--color-white);">
+              <span style="color: var(--color-secondary); font-size: 0.85rem; font-weight: 600;">NEW UPDATE</span>
+              <h4 style="margin: 0.5rem 0;">Property Tax Rebate Extended</h4>
+              <p style="font-size: 0.9rem; margin-bottom: 0;">The 5% rebate on property tax payments has been extended till the end of this month.</p>
+            </div>
+            <div class="glass-card" style="padding: 1.5rem; background: var(--color-white);">
+              <span style="color: var(--color-secondary); font-size: 0.85rem; font-weight: 600;">PUBLIC NOTICE</span>
+              <h4 style="margin: 0.5rem 0;">Smart Water Meters Installation</h4>
+              <p style="font-size: 0.9rem; margin-bottom: 0;">Installation of smart water meters will begin in Zone 4 starting next week.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="reveal-right">
+          <h2 class="section-title">Development Projects</h2>
+          <ul style="margin-top: 2rem; list-style: none;">
+            <li style="padding: 1rem 0; border-bottom: 1px solid var(--color-light-gray); display: flex; justify-content: space-between; align-items: center;">
+              <strong>Road Development Phase III</strong> <span style="background: var(--color-secondary); color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.8rem;">In Progress</span>
+            </li>
+            <li style="padding: 1rem 0; border-bottom: 1px solid var(--color-light-gray); display: flex; justify-content: space-between; align-items: center;">
+              <strong>Smart City Wi-Fi Zones</strong> <span style="background: #4CAF50; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.8rem;">Completed</span>
+            </li>
+            <li style="padding: 1rem 0; border-bottom: 1px solid var(--color-light-gray); display: flex; justify-content: space-between; align-items: center;">
+              <strong>Waste Recycling Plant</strong> <span style="background: var(--color-secondary); color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.8rem;">In Progress</span>
+            </li>
+            <li style="padding: 1rem 0; display: flex; justify-content: space-between; align-items: center;">
+              <strong>Public Parks Renovation</strong> <span style="background: #2196F3; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.8rem;">Upcoming</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section section-dark text-center" style="padding: 8rem 0;">
+    <div class="container reveal-scale">
+      <h2 style="font-size: 3rem; margin-bottom: 1rem;">Serve Citizens Better</h2>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem; color: var(--color-light-gray);">Join thousands of citizens who have already switched to our smart digital services.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="contact.html" class="btn btn-secondary ripple">Register Complaint</a>
+        <a href="services.html" class="btn btn-outline-white ripple">Explore Services</a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer" style="background-color: #050b14; color: #a0aabf; padding-top: 4rem;">
+    <style>
+      .cyber-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 30px;
+        height: 2px;
+        background-color: #00d25b;
+      }
+      .cyber-links a {
+        transition: color 0.2s;
+      }
+      .cyber-links a:hover {
+        color: #00d25b !important;
+      }
+      @media (max-width: 992px) {
+        .cyber-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      }
+      @media (max-width: 768px) {
+        .cyber-grid { grid-template-columns: 1fr !important; }
+      }
+    </style>
+    <div class="container">
+      <div class="cyber-grid" style="display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.5fr 1.5fr; gap: 2rem; margin-bottom: 3rem;">
+        
+        <div class="footer-brand">
+          <a href="index.html" class="logo-container" style="display: inline-flex; align-items: center; margin-bottom: 1.5rem;">
+            <img src="assets/images/logo.webp" alt="Stackly Logo" style="height: 35px; width: auto; object-fit: contain;">
+          </a>
+          <p style="margin-bottom: 2rem; line-height: 1.6; font-size: 0.95rem;">AI-driven next-generation cybersecurity platform protecting home users and corporate endpoints.</p>
+          <div class="social-icons" style="display: flex; gap: 1rem;">
+            <a href="#" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='#00d25b'" onmouseout="this.style.background='#111827'"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='#00d25b'" onmouseout="this.style.background='#111827'"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+            <a href="#" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='#00d25b'" onmouseout="this.style.background='#111827'"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="cyber-title" style="color: white; font-size: 1.1rem; font-weight: 600; margin-bottom: 2rem; position: relative; padding-bottom: 0.5rem;">Quick Links</h4>
+          <ul class="cyber-links" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Home</a></li>
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Antivirus</a></li>
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Internet Security</a></li>
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Business Solutions</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="cyber-title" style="color: white; font-size: 1.1rem; font-weight: 600; margin-bottom: 2rem; position: relative; padding-bottom: 0.5rem;">Company</h4>
+          <ul class="cyber-links" style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">About Us</a></li>
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Help Desk Support</a></li>
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="cyber-title" style="color: white; font-size: 1.1rem; font-weight: 600; margin-bottom: 2rem; position: relative; padding-bottom: 0.5rem;">Contact</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem;">
+              <svg style="margin-top: 3px; min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>support@stackly.com</span>
+            </li>
+            <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem;">
+              <svg style="margin-top: 3px; min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+1 (800) 555-0199</span>
+            </li>
+            <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem;">
+              <svg style="margin-top: 3px; min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>123 Security Blvd, NY 10012</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="cyber-title" style="color: white; font-size: 1.1rem; font-weight: 600; margin-bottom: 2rem; position: relative; padding-bottom: 0.5rem;">Our Location</h4>
+          <div style="width: 100%; height: 160px; border-radius: 8px; overflow: hidden; position: relative;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1615358008394!2d78.17140487327917!3d11.682961841822499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1785152239977!5m2!1sen!2sin" width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(80%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 0; text-align: center; display: flex; justify-content: center; font-size: 0.9rem;">
+        <p style="margin: 0;">&copy; 2026 Stackly Cyber Security. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

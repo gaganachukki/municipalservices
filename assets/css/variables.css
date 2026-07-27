@@ -1,0 +1,62 @@
+:root {
+  /* Colors */
+  --color-primary: #121212; /* Dark Charcoal */
+  --color-secondary: #D4AF37; /* Gold */
+  --color-accent: #E5C354; /* Lighter Gold for hover */
+  --color-white: #FFFFFF;
+  --color-light-gray: #E0E0E0;
+  --color-soft-beige: #F5F5F0;
+  --color-text-dark: #121212;
+  --color-text-light: #F5F5F5;
+  --color-text-muted: #666666;
+  
+  /* Backgrounds */
+  --bg-main: #FFFFFF;
+  --bg-secondary: #F5F5F0;
+  --bg-dark: #121212;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glass-dark: rgba(18, 18, 18, 0.8);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #121212 0%, #2A2A2A 100%);
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B8962A 100%);
+  
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  
+  /* Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --border-glass: 1px solid rgba(255, 255, 255, 0.18);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease-in-out;
+  
+  /* Z-Index */
+  --z-negative: -1;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+[data-theme="dark"] {
+  --bg-main: #121212;
+  --bg-secondary: #1E1E1E;
+  --color-text-dark: #FFFFFF;
+  --color-text-muted: #A0A0A0;
+  --bg-glass: rgba(18, 18, 18, 0.85);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --border-glass: 1px solid rgba(255, 255, 255, 0.05);
+}
