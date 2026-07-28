@@ -87,73 +87,157 @@
     </div>
   </nav>
 
-  <div class="page-banner">
+  <div class="page-banner" style="background: linear-gradient(rgba(5,11,20,0.55), rgba(5,11,20,0.55)), url('assets/images/departments.webp') center/cover;">
     <div class="container reveal">
-      <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Municipal Departments</h1>
-      <p style="font-size: 1.2rem; color: var(--color-light-gray);">Discover the various departments working to keep the city running smoothly.</p>
+      <h1 style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--color-secondary);">Municipal Departments</h1>
+      <p style="font-size: 1.2rem; color: var(--color-white);">Discover the various departments working to keep the city running smoothly.</p>
     </div>
   </div>
 
-  <section class="section section-gray">
+  <section class="section">
     <div class="container">
       
-      <!-- Revenue -->
-      <div class="dept-full-card reveal-left delay-100">
-        <div class="dept-icon">💰</div>
-        <div class="dept-info">
-          <h3>Revenue Department</h3>
-          <p>The Revenue Department is the backbone of municipal finances. It is responsible for assessing and collecting property tax, professional tax, trade licenses, and other municipal dues.</p>
-          <a href="services.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Pay Taxes</a>
+      <!-- Section 1: Department Overview (Grid) -->
+      <div class="about-section reveal">
+        <h2 class="section-title text-center" style="width: 100%;">Department Directory</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem; color: var(--color-text-muted);">Quickly navigate to the core administrative branches of our municipality.</p>
+        <div class="grid-4" style="gap: 1.5rem;">
+          <div class="about-card text-center reveal-up delay-100" style="padding: 2rem;">
+            <i class="fa-solid fa-coins" style="font-size: 2rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Revenue</h4>
+            <a href="#revenue" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 500;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="about-card text-center reveal-up delay-200" style="padding: 2rem;">
+            <i class="fa-solid fa-stethoscope" style="font-size: 2rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Public Health</h4>
+            <a href="#health" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 500;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="about-card text-center reveal-up delay-300" style="padding: 2rem;">
+            <i class="fa-solid fa-hard-hat" style="font-size: 2rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Engineering</h4>
+            <a href="#engineering" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 500;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="about-card text-center reveal-up delay-400" style="padding: 2rem;">
+            <i class="fa-solid fa-city" style="font-size: 2rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Town Planning</h4>
+            <a href="#planning" style="color: var(--color-primary); font-size: 0.9rem; font-weight: 500;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
 
-      <!-- Health -->
-      <div class="dept-full-card reveal-right delay-200">
-        <div class="dept-icon">🩺</div>
-        <div class="dept-info">
-          <h3>Health Department</h3>
-          <p>Dedicated to maintaining public health, this department oversees municipal dispensaries, maternity homes, vaccination drives, disease control, and issuing birth/death certificates.</p>
-          <a href="services.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Apply Certificates</a>
+      <!-- Section 2: Revenue & Taxation -->
+      <div id="revenue" class="about-section reveal" style="margin-top: 6rem;">
+        <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div class="reveal-left">
+            <h2 class="section-title">Revenue & Taxation</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">The financial backbone of the city. We manage the equitable assessment and collection of property taxes, professional taxes, and commercial trade licenses to fund urban development.</p>
+            <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-check" style="color: var(--color-secondary); margin-right: 10px;"></i> Online Property Tax Payment</li>
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-check" style="color: var(--color-secondary); margin-right: 10px;"></i> Trade License Renewals</li>
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-check" style="color: var(--color-secondary); margin-right: 10px;"></i> Water Charges Assessment</li>
+            </ul>
+            <a href="services.html" class="btn btn-secondary">Pay Taxes Online</a>
+          </div>
+          <div class="reveal-right">
+            <img src="assets/images/img_20.webp" alt="Revenue Department" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+          </div>
         </div>
       </div>
 
-      <!-- Engineering -->
-      <div class="dept-full-card reveal-left delay-100">
-        <div class="dept-icon">🛣️</div>
-        <div class="dept-info">
-          <h3>Engineering Department</h3>
-          <p>Responsible for the construction and maintenance of city infrastructure, including roads, bridges, storm-water drains, and public buildings.</p>
-          <a href="contact.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Report Damage</a>
+      <!-- Section 3: Public Health & Sanitation -->
+      <div id="health" class="about-section reveal" style="margin-top: 6rem; background: var(--bg-secondary); padding: 4rem; border-radius: var(--radius-lg);">
+        <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div class="reveal-left">
+            <img src="assets/images/img_21.webp" alt="Public Health" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+          </div>
+          <div class="reveal-right">
+            <h2 class="section-title">Public Health & Sanitation</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">Committed to maintaining a clean and disease-free environment. This department oversees municipal dispensaries, solid waste management, and vital statistics.</p>
+            <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-notes-medical" style="color: var(--color-secondary); margin-right: 10px;"></i> Birth & Death Certificates</li>
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-trash" style="color: var(--color-secondary); margin-right: 10px;"></i> Door-to-Door Waste Collection</li>
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-syringe" style="color: var(--color-secondary); margin-right: 10px;"></i> Free Vaccination Drives</li>
+            </ul>
+            <a href="services.html" class="btn btn-outline" style="border-color: var(--color-primary); color: var(--color-primary);">Apply for Certificates</a>
+          </div>
         </div>
       </div>
 
-      <!-- Town Planning -->
-      <div class="dept-full-card reveal-right delay-200">
-        <div class="dept-icon">🏙️</div>
-        <div class="dept-info">
-          <h3>Town Planning</h3>
-          <p>Ensures sustainable urban development. Handles the approval of building plans, zoning regulations, and master plan execution for the smart city.</p>
-          <a href="services.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Building Approval</a>
+      <!-- Section 4: Engineering & Infrastructure -->
+      <div id="engineering" class="about-section reveal" style="margin-top: 6rem;">
+        <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div class="reveal-left">
+            <h2 class="section-title">Engineering & Infrastructure</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">Building the future of our city. The engineering wing is responsible for all civil works including roads, bridges, storm-water drains, and smart city street lighting.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+              <div style="background: var(--color-white); padding: 1rem; border-left: 4px solid var(--color-secondary); box-shadow: var(--shadow-sm);">
+                <h4 style="margin-bottom: 0.3rem;">Road Maintenance</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted);">Pothole repairs & relaying</p>
+              </div>
+              <div style="background: var(--color-white); padding: 1rem; border-left: 4px solid var(--color-secondary); box-shadow: var(--shadow-sm);">
+                <h4 style="margin-bottom: 0.3rem;">Street Lighting</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted);">100% LED coverage</p>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary">Report Infrastructure Issue</a>
+          </div>
+          <div class="reveal-right">
+            <img src="assets/images/img_22.webp" alt="Engineering" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+          </div>
         </div>
       </div>
 
-      <!-- Water Supply -->
-      <div class="dept-full-card reveal-left delay-100">
-        <div class="dept-icon">🚰</div>
-        <div class="dept-info">
-          <h3>Water Supply Department</h3>
-          <p>Manages the city's drinking water distribution network, water treatment plants, underground drainage systems, and rainwater harvesting initiatives.</p>
-          <a href="services.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">New Connection</a>
+      <!-- Section 5: Urban Town Planning -->
+      <div id="planning" class="about-section reveal" style="margin-top: 6rem; background: var(--color-primary); color: var(--color-white); padding: 5rem 3rem; border-radius: var(--radius-lg);">
+        <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div class="reveal-left">
+            <img src="assets/images/img_23.webp" alt="Town Planning" style="width: 100%; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 3px solid var(--color-secondary);">
+          </div>
+          <div class="reveal-right">
+            <h2 class="section-title" style="color: var(--color-secondary);">Urban Town Planning</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.05rem; opacity: 0.9;">Ensuring sustainable and regulated growth. We handle zoning laws, master plan execution, and building approvals to create a highly livable smart city.</p>
+            <ul style="list-style: none; padding: 0; margin-bottom: 2rem; opacity: 0.9;">
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-file-signature" style="color: var(--color-secondary); margin-right: 10px;"></i> Online Building Approvals</li>
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-map-location-dot" style="color: var(--color-secondary); margin-right: 10px;"></i> Zoning & Land Use Information</li>
+              <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-tree-city" style="color: var(--color-secondary); margin-right: 10px;"></i> Smart Park Development</li>
+            </ul>
+            <a href="services.html" class="btn btn-outline-white">Apply for Permits</a>
+          </div>
         </div>
       </div>
 
-      <!-- Sanitation -->
-      <div class="dept-full-card reveal-right delay-200">
-        <div class="dept-icon">🗑️</div>
-        <div class="dept-info">
-          <h3>Sanitation Department</h3>
-          <p>Ensures a clean city through daily door-to-door solid waste collection, street sweeping, public toilet maintenance, and waste recycling projects.</p>
-          <a href="contact.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Request Cleanup</a>
+      <!-- Section 6: Emergency & Disaster Management -->
+      <div class="about-section reveal" style="margin-top: 6rem;">
+        <h2 class="section-title text-center" style="width: 100%;">Emergency & Disaster Management</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; color: var(--color-text-muted);">24/7 rapid response teams dedicated to citizen safety during natural calamities, floods, and fire emergencies.</p>
+        <div class="grid-3" style="gap: 2rem;">
+          <div class="about-card text-center reveal-up delay-100" style="border-top: 4px solid #ef4444; padding: 3rem 2rem;">
+            <i class="fa-solid fa-fire-extinguisher" style="font-size: 2.5rem; color: #ef4444; margin-bottom: 1.5rem;"></i>
+            <h4 style="margin-bottom: 1rem;">Fire Services</h4>
+            <h2 style="color: #ef4444; margin-bottom: 0.5rem;">101</h2>
+            <p style="font-size: 0.9rem;">24/7 Fire & Rescue Team</p>
+          </div>
+          <div class="about-card text-center reveal-up delay-200" style="border-top: 4px solid #3b82f6; padding: 3rem 2rem;">
+            <i class="fa-solid fa-cloud-showers-water" style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 1.5rem;"></i>
+            <h4 style="margin-bottom: 1rem;">Flood Control</h4>
+            <h2 style="color: #3b82f6; margin-bottom: 0.5rem;">1913</h2>
+            <p style="font-size: 0.9rem;">Monsoon Helpline & Evacuation</p>
+          </div>
+          <div class="about-card text-center reveal-up delay-300" style="border-top: 4px solid #10b981; padding: 3rem 2rem;">
+            <i class="fa-solid fa-truck-medical" style="font-size: 2.5rem; color: #10b981; margin-bottom: 1.5rem;"></i>
+            <h4 style="margin-bottom: 1rem;">Medical Emergency</h4>
+            <h2 style="color: #10b981; margin-bottom: 0.5rem;">108</h2>
+            <p style="font-size: 0.9rem;">Ambulance & Critical Care</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7: Unified Departmental Helpdesk -->
+      <div class="about-section reveal" style="margin-top: 6rem; padding: 4rem 2rem; border-top: 1px solid rgba(0,0,0,0.1);">
+        <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-title">Unified Departmental Helpdesk</h2>
+          <p style="font-size: 1.1rem; margin-bottom: 2rem;">Not sure which department handles your request? Submit your grievance or query to our centralized helpdesk, and we will route it to the appropriate officials automatically.</p>
+          <a href="contact.html" class="btn btn-secondary ripple" style="font-size: 1.1rem; padding: 0.8rem 2.5rem;"><i class="fa-solid fa-headset" style="margin-right: 10px;"></i> Contact Helpdesk</a>
         </div>
       </div>
 

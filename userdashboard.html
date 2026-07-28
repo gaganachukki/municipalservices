@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen Dashboard | STACKLY Municipal Portal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/images/logo.webp" alt="STACKLY" class="sidebar-logo">
+      <div>
+      </div>
+    </div>
+
+    <div class="sidebar-menu">
+      <div class="menu-group">
+        <div class="menu-label">Main</div>
+        <a href="#" class="menu-item active">
+          <div class="menu-item-left"><i class="fa-solid fa-house"></i> Dashboard</div>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-regular fa-file-lines"></i> My Applications</div>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:rgba(255,255,255,0.3)"></i>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-indian-rupee-sign"></i> My Payments</div>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:rgba(255,255,255,0.3)"></i>
+        </a>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-label">Services</div>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-circle-plus"></i> Apply for Services</div>
+          <i class="fa-solid fa-chevron-right" style="font-size:0.7rem; color:rgba(255,255,255,0.3)"></i>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-money-bill-wave"></i> Pay Taxes</div>
+        </a>
+
+      <div class="menu-group">
+        <div class="menu-label">Account</div>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-gear"></i> Profile Settings</div>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-regular fa-circle-question"></i> Help & Support</div>
+        </a>
+        <a href="login.html" class="menu-item" style="margin-top: 10px;">
+          <div class="menu-item-left"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="help-card">
+        <div class="help-header">
+          <i class="fa-solid fa-headset"></i> Need Help?
+        </div>
+        <div class="help-text">Our support team is ready to assist you.</div>
+        <a href="contact.html" class="btn-support">Contact Support</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="header-left">
+        <div class="header-greeting">Welcome back,</div>
+        <div class="header-name">
+          Rajesh Kumar <i class="fa-solid fa-circle-check verified-icon"></i>
+        </div>
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">Manage your municipal services efficiently</div>
+      </div>
+
+      <div class="header-center">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search services, applications...">
+          <span class="search-kbd">Ctrl /</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <a href="#" class="notification-bell">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-dot"></span>
+        </a>
+        <div class="user-profile">
+          <img src="assets/images/img_3.webp" alt="Avatar" class="user-avatar" style="filter: grayscale(100%); opacity: 0.8;"> <!-- generic fallback avatar placeholder -->
+          <div class="user-info">
+            <span class="user-name">Rajesh Kumar</span>
+            <span class="user-role">Citizen</span>
+          </div>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Scrollable Dash Content -->
+    <div class="dashboard-content">
+      
+      <!-- Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-file-lines"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Total Applications</div>
+            <div class="metric-value">12</div>
+            <a href="#" class="metric-link">View all applications <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#def7ec; color:#057a55;"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Approved</div>
+            <div class="metric-value">08</div>
+            <a href="#" class="metric-link">Successfully approved <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#e1effe; color:#1c64f2;"><i class="fa-regular fa-clock"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Pending</div>
+            <div class="metric-value">03</div>
+            <a href="#" class="metric-link">Awaiting approval <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#fde8e8; color:#e02424;"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Total Payments</div>
+            <div class="metric-value">₹ 24,560</div>
+            <a href="#" class="metric-link">View payment history <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Grid -->
+      <div class="dashboard-grid">
+        
+        <!-- Left Column (Applications & Services) -->
+        <div class="dash-column">
+          
+          <!-- Quick Services -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h3 class="card-title">Quick Services</h3>
+              <a href="services.html" class="card-action">View All Services <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="services-row">
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-file-certificate"></i></div>
+                <div class="service-name">Birth Certificate</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#fdf6b2; color:#8a2c0d;"><i class="fa-regular fa-building"></i></div>
+                <div class="service-name">Property Tax</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#e1effe; color:#1c64f2;"><i class="fa-solid fa-droplet"></i></div>
+                <div class="service-name">Water Supply</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#f3e8ff; color:#7e3af2;"><i class="fa-solid fa-store"></i></div>
+                <div class="service-name">Trade License</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#def7ec; color:#057a55;"><i class="fa-solid fa-helmet-safety"></i></div>
+                <div class="service-name">Building Approval</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#fde8e8; color:#e02424;"><i class="fa-solid fa-trash-can"></i></div>
+                <div class="service-name">Garbage Collection</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Recent Applications -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h3 class="card-title">Recent Applications</h3>
+              <a href="#" class="card-action">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Application ID</th>
+                    <th>Service</th>
+                    <th>Status</th>
+                    <th>Applied On</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>APP-2024-00125</td>
+                    <td>Birth Certificate</td>
+                    <td><span class="status-pill status-approved">Approved</span></td>
+                    <td>12 May 2024</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00124</td>
+                    <td>Property Tax</td>
+                    <td><span class="status-pill status-pending">Pending</span></td>
+                    <td>10 May 2024</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00123</td>
+                    <td>Trade License</td>
+                    <td><span class="status-pill status-progress">In Progress</span></td>
+                    <td>08 May 2024</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00122</td>
+                    <td>Building Approval</td>
+                    <td><span class="status-pill status-rejected">Rejected</span></td>
+                    <td>05 May 2024</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00121</td>
+                    <td>Water Connection</td>
+                    <td><span class="status-pill status-approved">Approved</span></td>
+                    <td>02 May 2024</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="#" style="color:var(--color-secondary); text-decoration:none; font-size:0.85rem; font-weight:600;">View All Applications <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column (Announcements & Actions) -->
+        <div class="dash-column">
+          
+          <!-- Latest Announcements -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h3 class="card-title">Latest Announcements</h3>
+              <a href="#" class="card-action">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="announcement-list">
+              <a href="#" class="announcement-item">
+                <img src="assets/images/img_1.webp" alt="News" class="announcement-img">
+                <div class="announcement-content">
+                  <div class="announcement-title">Property tax rebate for early payment</div>
+                  <div class="announcement-desc">Pay before 31st May 2024 and get 10% rebate.</div>
+                  <div class="announcement-date">15 May 2024</div>
+                </div>
+              </a>
+              <a href="#" class="announcement-item">
+                <img src="assets/images/img_12.webp" alt="News" class="announcement-img">
+                <div class="announcement-content">
+                  <div class="announcement-title">Water supply maintenance notice</div>
+                  <div class="announcement-desc">Maintenance on 20th May in Ward 12 & 13.</div>
+                  <div class="announcement-date">14 May 2024</div>
+                </div>
+              </a>
+              <a href="#" class="announcement-item">
+                <img src="assets/images/img_8.webp" alt="News" class="announcement-img">
+                <div class="announcement-content">
+                  <div class="announcement-title">New online services launched</div>
+                  <div class="announcement-desc">Trade License and Building Approval now online.</div>
+                  <div class="announcement-date">12 May 2024</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="dash-card" style="background: transparent; box-shadow: none; padding: 0; border: none;">
+            <h3 class="card-title" style="margin-bottom:16px;">Quick Actions</h3>
+            
+            <div class="quick-action-dark">
+              <div class="qa-dark-left">
+                <div class="qa-dark-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="qa-dark-text">
+                  <h4>Register a Complaint</h4>
+                  <p>Report issues in your area</p>
+                </div>
+              </div>
+              <button class="btn-register-now">Register Now</button>
+            </div>
+
+            <div class="qa-grid">
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#def7ec; color:#057a55;"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                <div class="qa-text">
+                  <h5>Track Application</h5>
+                  <p>Check application status</p>
+                </div>
+              </a>
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-money-bill-wave"></i></div>
+                <div class="qa-text">
+                  <h5>Pay Outstanding Tax</h5>
+                  <p>View and pay taxes</p>
+                </div>
+              </a>
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#e1effe; color:#1c64f2;"><i class="fa-solid fa-download"></i></div>
+                <div class="qa-text">
+                  <h5>Download Certificate</h5>
+                  <p>Get your certificates</p>
+                </div>
+              </a>
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#fdf6b2; color:#8a2c0d;"><i class="fa-regular fa-calendar-check"></i></div>
+                <div class="qa-text">
+                  <h5>Book Appointment</h5>
+                  <p>Schedule with officials</p>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | STACKLY Municipal Portal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(5, 11, 20, 0.9), rgba(5, 11, 20, 0.9)), url('assets/images/img_11.webp') no-repeat center center/cover;
+      font-family: var(--font-primary);
+      color: var(--color-white);
+    }
+    
+    .auth-card {
+      background: #08101a;
+      width: 100%;
+      max-width: 480px;
+      padding: 2.5rem 2.5rem 3.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+    }
+
+    .auth-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .back-arrow {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0.05);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all var(--transition-fast);
+    }
+    .back-arrow:hover {
+      color: var(--color-white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-container img {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .auth-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .auth-header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--color-white);
+      margin: 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+    .form-control {
+      width: 100%;
+      padding: 16px;
+      background: #0d1624;
+      border: 1px solid #1a2639;
+      border-radius: var(--radius-sm);
+      color: var(--color-white);
+      font-family: var(--font-primary);
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--color-secondary);
+      background: #111d2e;
+    }
+    .form-control::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    select.form-control {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.7);
+    }
+    select.form-control:focus {
+      color: var(--color-white);
+    }
+    .select-arrow {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.4);
+      pointer-events: none;
+    }
+    
+    .eye-toggle {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    .eye-toggle:hover {
+      color: var(--color-white);
+    }
+
+    .custom-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .custom-checkbox input {
+      accent-color: var(--color-secondary);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--color-secondary);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-family: var(--font-primary);
+    }
+    .btn-submit:hover {
+      background: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="auth-card">
+    
+    <div class="auth-card-top">
+      <a href="login.html" class="back-arrow"><i class="fa-solid fa-arrow-left"></i></a>
+      <a href="index.html" class="logo-container">
+        <img src="assets/images/logo.webp" alt="STACKLY">
+      </a>
+    </div>
+
+    <div class="auth-header">
+      <h1>Create Account</h1>
+    </div>
+
+    <form action="#">
+      
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Full Name" required>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="citizen">Citizen</option>
+          <option value="staff">Municipal Staff</option>
+          <option value="contractor">Contractor</option>
+        </select>
+        <i class="fa-solid fa-chevron-down select-arrow"></i>
+      </div>
+
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email Address" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="Password" required>
+        <i class="fa-regular fa-eye eye-toggle" onclick="togglePassword('password', this)"></i>
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
+        <i class="fa-regular fa-eye eye-toggle" onclick="togglePassword('confirm_password', this)"></i>
+      </div>
+
+      <label class="custom-checkbox">
+        <input type="checkbox" required>
+        I agree to Terms & Privacy
+      </label>
+
+      <button type="submit" class="btn-submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword(inputId, icon) {
+      const input = document.getElementById(inputId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      } } </script>
+</body>
+</html>
+

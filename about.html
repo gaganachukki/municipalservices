@@ -23,7 +23,7 @@
     }
     .page-banner h1 {
       font-size: 3.5rem;
-      color: var(--color-white);
+      color: var(--color-secondary);
       margin-bottom: 1rem;
     }
     .about-section { margin-bottom: 3rem; }
@@ -33,6 +33,34 @@
       padding: 3rem;
       box-shadow: var(--shadow-sm);
       height: 100%;
+    }
+    .leadership-marquee-container {
+      overflow: hidden;
+      width: 100%;
+      padding: 1rem 0;
+      display: flex;
+    }
+    .leadership-marquee-track {
+      display: flex;
+      gap: 2rem;
+      width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+    .leadership-marquee-track:hover {
+      animation-play-state: paused;
+    }
+    .marquee-group {
+      display: flex;
+      gap: 2rem;
+      flex-shrink: 0;
+    }
+    .marquee-group .about-card {
+      width: 280px;
+      flex-shrink: 0;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 1rem)); }
     }
   </style>
 
@@ -66,63 +94,206 @@
   </nav>
 
   <!-- Banner -->
-  <div class="page-banner">
+  <div class="page-banner" style="background: linear-gradient(rgba(5,11,20,0.55), rgba(5,11,20,0.55)), url('assets/images/img_5.webp') center/cover;">
     <div class="container reveal">
-      <h1>About Municipality</h1>
-      <p style="font-size: 1.2rem; color: var(--color-light-gray);">Dedicated to transparent and effective urban governance.</p>
+      <h1 style="color: var(--color-secondary);">About Municipality</h1>
+      <p style="font-size: 1.2rem; color: var(--color-white);">Dedicated to transparent and effective urban governance.</p>
     </div>
   </div>
 
   <section class="section">
     <div class="container">
+      
       <!-- History -->
       <div class="about-section reveal">
-        <h2 class="section-title">History</h2>
-        <p>Established in 1950, our municipality has grown from a small administrative body to a large-scale governance structure managing the needs of over 1 million residents. Our journey has been marked by continuous adaptation to modern technologies and expanding urban limits.</p>
+        <h2 class="section-title text-center" style="width: 100%;">Our History & Evolution</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">Established in 1950, our municipality has grown from a small administrative body to a large-scale governance structure managing the needs of over 1 million residents. Our journey has been marked by continuous adaptation to modern technologies and expanding urban limits.</p>
       </div>
 
-      <div class="grid-2" style="margin-top: 4rem;">
+      <!-- NEW: Core Values -->
+      <div class="about-section reveal" style="margin-top: 5rem;">
+        <h2 class="section-title text-center" style="width: 100%;">Core Values & Principles</h2>
+        <div class="grid-4" style="margin-top: 3rem; gap: 2rem;">
+          <div class="about-card text-center reveal-up delay-100">
+            <i class="fa-solid fa-eye" style="font-size: 2.5rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4>Transparency</h4>
+            <p style="font-size: 0.9rem;">Open data policies and transparent decision-making processes accessible to every citizen.</p>
+          </div>
+          <div class="about-card text-center reveal-up delay-200">
+            <i class="fa-solid fa-microchip" style="font-size: 2.5rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4>Innovation</h4>
+            <p style="font-size: 0.9rem;">Embracing smart city technologies to solve urban challenges efficiently.</p>
+          </div>
+          <div class="about-card text-center reveal-up delay-300">
+            <i class="fa-solid fa-leaf" style="font-size: 2.5rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4>Sustainability</h4>
+            <p style="font-size: 0.9rem;">Committed to green initiatives, renewable energy, and eco-friendly urban planning.</p>
+          </div>
+          <div class="about-card text-center reveal-up delay-400">
+            <i class="fa-solid fa-users" style="font-size: 2.5rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+            <h4>Inclusivity</h4>
+            <p style="font-size: 0.9rem;">Ensuring equal opportunities and accessible services for citizens from all walks of life.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 5rem; gap: 2rem;">
         <!-- Vision -->
-        <div class="about-card reveal-left delay-100">
-          <h2 style="color: var(--color-secondary);">Vision</h2>
-          <p>To be the most advanced, clean, and citizen-friendly municipality by integrating technology, sustainable practices, and inclusive development to ensure a high standard of living for all citizens.</p>
+        <div class="about-card reveal-left delay-100" style="background: var(--color-primary); color: var(--color-white); border: none; border-top: 4px solid var(--color-secondary);">
+          <i class="fa-solid fa-bullseye" style="font-size: 3rem; color: var(--color-secondary); margin-bottom: 1.5rem;"></i>
+          <h2 style="color: var(--color-secondary); margin-bottom: 1rem;">Vision</h2>
+          <p style="color: var(--color-white); opacity: 0.9;">To be the most advanced, clean, and citizen-friendly municipality by integrating technology, sustainable practices, and inclusive development to ensure a high standard of living for all citizens.</p>
         </div>
         
         <!-- Mission -->
-        <div class="about-card reveal-right delay-200">
-          <h2 style="color: var(--color-secondary);">Mission</h2>
-          <p>Delivering timely and transparent public services, maintaining robust urban infrastructure, protecting the environment, and actively engaging citizens in the city's governance and decision-making processes.</p>
+        <div class="about-card reveal-right delay-200" style="background: var(--color-primary); color: var(--color-white); border: none; border-top: 4px solid var(--color-secondary);">
+          <i class="fa-solid fa-rocket" style="font-size: 3rem; color: var(--color-secondary); margin-bottom: 1.5rem;"></i>
+          <h2 style="color: var(--color-secondary); margin-bottom: 1rem;">Mission</h2>
+          <p style="color: var(--color-white); opacity: 0.9;">Delivering timely and transparent public services, maintaining robust urban infrastructure, protecting the environment, and actively engaging citizens in the city's governance and decision-making processes.</p>
         </div>
       </div>
 
       <!-- Mayor Message -->
-      <div class="about-section reveal" style="margin-top: 5rem;">
-        <div class="grid-2">
-          <div style="background: var(--bg-secondary); border-radius: var(--radius-md); height: 400px; display: flex; align-items: center; justify-content: center;">
-            <span style="color: var(--color-text-muted);">Mayor Portrait</span>
+      <div class="about-section reveal" style="margin-top: 6rem;">
+        <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div class="reveal-left">
+            <img src="assets/images/img_17.webp" alt="Mayor Portrait" style="width: 100%; height: 450px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 4px solid var(--color-secondary);">
           </div>
-          <div>
+          <div class="reveal-right">
             <h2 class="section-title">Message from the Mayor</h2>
-            <p>Welcome to the STACKLY Municipal Services Portal. In our pursuit to create a "Smart City", we have completely digitalized our operations. This portal reflects our commitment to <strong>transparency, speed, and accountability</strong>.</p>
-            <p>I encourage all citizens to utilize these online services, participate in local development, and help us build a better tomorrow.</p>
-            <h4 style="margin-top: 2rem;">Hon'ble Mayor</h4>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Welcome to the STACKLY Municipal Services Portal. In our pursuit to create a "Smart City", we have completely digitalized our operations. This portal reflects our commitment to <strong>transparency, speed, and accountability</strong>.</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">I encourage all citizens to utilize these online services, participate in local development, and help us build a better tomorrow.</p>
+            <h4 style="font-size: 1.5rem; color: var(--color-secondary);">Hon'ble Mayor</h4>
+            <p style="color: var(--color-text-muted);">City Council Head</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: Leadership Team -->
+      <div class="about-section reveal" style="margin-top: 6rem;">
+        <h2 class="section-title text-center" style="width: 100%;">Leadership & Key Personnel</h2>
+        <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; color: var(--color-text-muted);">Meet the dedicated individuals guiding our city towards a smarter and greener future.</p>
+        <div class="leadership-marquee-container">
+          <div class="leadership-marquee-track">
+            <!-- First Group -->
+            <div class="marquee-group">
+              <!-- Profile 1 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_12.webp" alt="Mayor" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Hon'ble Mayor</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Head of the City Council</p>
+              </div>
+              <!-- Profile 2 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_13.webp" alt="Commissioner" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Municipal Commissioner</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Chief Executive Officer</p>
+              </div>
+              <!-- Profile 3 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_14.webp" alt="City Engineer" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Chief City Engineer</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Infrastructure & Planning</p>
+              </div>
+              <!-- Profile 4 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_15.webp" alt="Health Director" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Director of Public Health</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Sanitation & Wellbeing</p>
+              </div>
+            </div>
+            
+            <!-- Duplicated Group for seamless loop -->
+            <div class="marquee-group" aria-hidden="true">
+              <!-- Profile 1 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_12.webp" alt="Mayor" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Hon'ble Mayor</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Head of the City Council</p>
+              </div>
+              <!-- Profile 2 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_13.webp" alt="Commissioner" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Municipal Commissioner</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Chief Executive Officer</p>
+              </div>
+              <!-- Profile 3 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_14.webp" alt="City Engineer" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Chief City Engineer</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Infrastructure & Planning</p>
+              </div>
+              <!-- Profile 4 -->
+              <div class="about-card text-center" style="padding: 2rem 1.5rem;">
+                <img src="assets/images/img_15.webp" alt="Health Director" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; display: block; border: 3px solid var(--color-secondary);">
+                <h4>Director of Public Health</h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Sanitation & Wellbeing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: Future Vision 2030 -->
+      <div class="about-section reveal" style="margin-top: 6rem;">
+        <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div class="reveal-left">
+            <h2 class="section-title">Future Vision 2030</h2>
+            <p style="margin-bottom: 1.5rem;">Our roadmap for the next decade focuses on hyper-connectivity, zero-emission transit, and fully automated civic services.</p>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+                <i class="fa-solid fa-check-circle" style="color: var(--color-secondary); margin-top: 4px;"></i>
+                <span><strong>100% EV Public Transit:</strong> Complete transition of the city bus fleet to electric vehicles by 2028.</span>
+              </li>
+              <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+                <i class="fa-solid fa-check-circle" style="color: var(--color-secondary); margin-top: 4px;"></i>
+                <span><strong>AI Traffic Management:</strong> Neural-network-based traffic lights to reduce commute times by 30%.</span>
+              </li>
+              <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+                <i class="fa-solid fa-check-circle" style="color: var(--color-secondary); margin-top: 4px;"></i>
+                <span><strong>Smart Water Grid:</strong> IoT sensors on all municipal pipelines to eliminate water leakage and track purity.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="reveal-right">
+            <img src="assets/images/img_16.webp" alt="Smart City Roadmap" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: Community Engagement -->
+      <div class="about-section reveal" style="margin-top: 6rem; background: var(--bg-secondary); padding: 4rem; border-radius: var(--radius-lg);">
+        <h2 class="section-title text-center" style="width: 100%;">Community Engagement</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">A smart city is built by its citizens. We provide multiple avenues for active participation.</p>
+        <div class="grid-3" style="gap: 2rem;">
+          <div class="about-card text-center reveal-up delay-100" style="background: var(--color-white);">
+            <h4>Digital Townhalls</h4>
+            <p style="font-size: 0.9rem;">Monthly virtual meetings with the Mayor and council members to discuss neighborhood issues directly.</p>
+          </div>
+          <div class="about-card text-center reveal-up delay-200" style="background: var(--color-white);">
+            <h4>Youth Civic Council</h4>
+            <p style="font-size: 0.9rem;">A dedicated platform for students and young professionals to propose innovative urban solutions.</p>
+          </div>
+          <div class="about-card text-center reveal-up delay-300" style="background: var(--color-white);">
+            <h4>Volunteer Programs</h4>
+            <p style="font-size: 0.9rem;">City-wide initiatives for tree planting, lake restoration, and community welfare programs.</p>
           </div>
         </div>
       </div>
 
       <!-- Administration -->
-      <div class="about-section reveal" style="margin-top: 5rem;">
+      <div class="about-section reveal" style="margin-top: 6rem;">
         <h2 class="section-title text-center" style="width: 100%;">Administration Hierarchy</h2>
-        <div class="grid-3" style="margin-top: 3rem;">
-          <div class="about-card text-center delay-100">
+        <div class="grid-3" style="margin-top: 3rem; gap: 2rem;">
+          <div class="about-card text-center reveal-up delay-100">
             <h4>City Council</h4>
             <p style="font-size: 0.9rem;">The legislative body comprising elected representatives from various wards, responsible for policy making.</p>
           </div>
-          <div class="about-card text-center delay-200">
+          <div class="about-card text-center reveal-up delay-200">
             <h4>Executive Wing</h4>
             <p style="font-size: 0.9rem;">Headed by the Municipal Commissioner, responsible for implementing policies and day-to-day administration.</p>
           </div>
-          <div class="about-card text-center delay-300">
+          <div class="about-card text-center reveal-up delay-300">
             <h4>Zonal Offices</h4>
             <p style="font-size: 0.9rem;">Decentralized offices across the city to ensure rapid service delivery and grievance redressal.</p>
           </div>
@@ -130,15 +301,15 @@
       </div>
 
       <!-- Achievements -->
-      <div class="about-section reveal" style="margin-top: 5rem; background: var(--bg-secondary); padding: 4rem; border-radius: var(--radius-lg);">
+      <div class="about-section reveal" style="margin-top: 6rem; padding: 4rem 2rem; border-top: 1px solid rgba(0,0,0,0.1);">
         <h2 class="section-title text-center" style="width: 100%;">Key Achievements</h2>
-        <ul style="margin-top: 2rem; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <li><i class="fa-solid fa-trophy"></i> Awarded 'Cleanest City' in 2025</li>
-          <li><i class="fa-solid fa-lightbulb"></i> 100% LED Street Lighting</li>
-          <li><i class="fa-solid fa-recycle"></i> Zero-Waste to Landfill Initiative</li>
-          <li>🌐 100% Digital Service Delivery</li>
-          <li><i class="fa-solid fa-tree"></i> Planted 500,000+ Saplings</li>
-          <li><i class="fa-solid fa-droplet"></i> 24/7 Water Supply in 80% Zones</li>
+        <ul style="margin-top: 3rem; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+          <li class="reveal-up delay-100" style="background: var(--color-white); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; box-shadow: var(--shadow-sm);"><i class="fa-solid fa-trophy" style="color: var(--color-secondary); font-size: 2rem; margin-bottom: 1rem;"></i><br> Awarded 'Cleanest City' in 2025</li>
+          <li class="reveal-up delay-200" style="background: var(--color-white); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; box-shadow: var(--shadow-sm);"><i class="fa-solid fa-lightbulb" style="color: var(--color-secondary); font-size: 2rem; margin-bottom: 1rem;"></i><br> 100% LED Street Lighting</li>
+          <li class="reveal-up delay-300" style="background: var(--color-white); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; box-shadow: var(--shadow-sm);"><i class="fa-solid fa-recycle" style="color: var(--color-secondary); font-size: 2rem; margin-bottom: 1rem;"></i><br> Zero-Waste to Landfill Initiative</li>
+          <li class="reveal-up delay-100" style="background: var(--color-white); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; box-shadow: var(--shadow-sm);"><i class="fa-solid fa-globe" style="color: var(--color-secondary); font-size: 2rem; margin-bottom: 1rem;"></i><br> 100% Digital Service Delivery</li>
+          <li class="reveal-up delay-200" style="background: var(--color-white); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; box-shadow: var(--shadow-sm);"><i class="fa-solid fa-tree" style="color: var(--color-secondary); font-size: 2rem; margin-bottom: 1rem;"></i><br> Planted 500,000+ Saplings</li>
+          <li class="reveal-up delay-300" style="background: var(--color-white); padding: 1.5rem; border-radius: var(--radius-sm); text-align: center; box-shadow: var(--shadow-sm);"><i class="fa-solid fa-droplet" style="color: var(--color-secondary); font-size: 2rem; margin-bottom: 1rem;"></i><br> 24/7 Water Supply in 80% Zones</li>
         </ul>
       </div>
 

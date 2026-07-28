@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | STACKLY Municipal Portal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/images/logo.webp" alt="STACKLY" class="sidebar-logo">
+      <div>
+      </div>
+    </div>
+
+    <div class="sidebar-menu">
+      <div class="menu-group">
+        <div class="menu-label">Main</div>
+        <a href="#" class="menu-item active">
+          <div class="menu-item-left"><i class="fa-solid fa-chart-pie"></i> Overview</div>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-users"></i> User Directory</div>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-file-signature"></i> Manage Applications</div>
+          <div class="badge">12</div>
+        </a>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-label">Departments</div>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-building"></i> Property & Tax</div>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-faucet-drip"></i> Water Supply</div>
+        </a>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-label">System</div>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-gear"></i> Portal Settings</div>
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-left"><i class="fa-solid fa-shield-halved"></i> Access Control</div>
+        </a>
+        <a href="login.html" class="menu-item" style="margin-top: 10px;">
+          <div class="menu-item-left"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="help-card" style="border-color: rgba(212, 175, 55, 0.3);">
+        <div class="help-header">
+          <i class="fa-solid fa-server"></i> System Status
+        </div>
+        <div class="help-text">All municipal systems are operating normally.</div>
+        <a href="#" class="btn-support" style="background: rgba(255,255,255,0.1); color: var(--color-white);">View Logs</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="header-left">
+        <div class="header-greeting">Welcome back, Admin</div>
+        <div class="header-name">
+          Priya Sharma <i class="fa-solid fa-user-shield verified-icon"></i>
+        </div>
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">Municipal Operations Dashboard</div>
+      </div>
+
+      <div class="header-center">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search users, application IDs, reports...">
+          <span class="search-kbd">Ctrl /</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <a href="#" class="notification-bell">
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-dot"></span>
+        </a>
+        <div class="user-profile">
+          <img src="assets/images/img_3.webp" alt="Avatar" class="user-avatar" style="filter: grayscale(100%); opacity: 0.8;">
+          <div class="user-info">
+            <span class="user-name">Priya Sharma</span>
+            <span class="user-role">Super Admin</span>
+          </div>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Scrollable Dash Content -->
+    <div class="dashboard-content">
+      
+      <!-- Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#e1effe; color:#1c64f2;"><i class="fa-solid fa-users"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Total Citizens Registered</div>
+            <div class="metric-value">45.2K</div>
+            <a href="#" class="metric-link">View user directory <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-file-signature"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Pending Approvals</div>
+            <div class="metric-value">124</div>
+            <a href="#" class="metric-link">Action required <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#def7ec; color:#057a55;"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Today's Revenue</div>
+            <div class="metric-value">₹ 1.2M</div>
+            <a href="#" class="metric-link">View financial report <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon" style="background:#fde8e8; color:#e02424;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div class="metric-info">
+            <div class="metric-title">Open Complaints</div>
+            <div class="metric-value">38</div>
+            <a href="#" class="metric-link">Assign response teams <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Grid -->
+      <div class="dashboard-grid">
+        
+        <!-- Left Column -->
+        <div class="dash-column">
+          
+          <!-- Quick Tools -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h3 class="card-title">Administrative Tools</h3>
+              <a href="#" class="card-action">View All Tools <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="services-row">
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-check-double"></i></div>
+                <div class="service-name">Batch Approve</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#fdf6b2; color:#8a2c0d;"><i class="fa-solid fa-bullhorn"></i></div>
+                <div class="service-name">Broadcast Alert</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#e1effe; color:#1c64f2;"><i class="fa-solid fa-file-csv"></i></div>
+                <div class="service-name">Export Data</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#f3e8ff; color:#7e3af2;"><i class="fa-solid fa-id-badge"></i></div>
+                <div class="service-name">Staff Access</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#def7ec; color:#057a55;"><i class="fa-solid fa-truck"></i></div>
+                <div class="service-name">Dispatch Fleet</div>
+              </a>
+              <a href="#" class="service-icon-card">
+                <div class="service-icon-wrap" style="background:#fde8e8; color:#e02424;"><i class="fa-solid fa-server"></i></div>
+                <div class="service-name">System Logs</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pending Approvals -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h3 class="card-title">Pending Approvals Queue</h3>
+              <a href="#" class="card-action">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Application ID</th>
+                    <th>Citizen Name</th>
+                    <th>Service Type</th>
+                    <th>Submitted On</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>APP-2024-00155</td>
+                    <td>Ramesh Kumar</td>
+                    <td>New Water Connection</td>
+                    <td>Today, 09:30 AM</td>
+                    <td><button class="btn-view" style="background:var(--color-secondary); color:var(--color-primary)">Review</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00154</td>
+                    <td>Anjali Gupta</td>
+                    <td>Property Tax Assess</td>
+                    <td>Today, 08:15 AM</td>
+                    <td><button class="btn-view" style="background:var(--color-secondary); color:var(--color-primary)">Review</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00151</td>
+                    <td>Mohamed Ali</td>
+                    <td>Trade License Renew</td>
+                    <td>Yesterday</td>
+                    <td><button class="btn-view" style="background:var(--color-secondary); color:var(--color-primary)">Review</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00148</td>
+                    <td>Sarah Thomas</td>
+                    <td>Building Plan Approval</td>
+                    <td>Yesterday</td>
+                    <td><button class="btn-view" style="background:var(--color-secondary); color:var(--color-primary)">Review</button></td>
+                  </tr>
+                  <tr>
+                    <td>APP-2024-00145</td>
+                    <td>Vikram Singh</td>
+                    <td>Birth Certificate</td>
+                    <td>26 May 2024</td>
+                    <td><button class="btn-view" style="background:var(--color-secondary); color:var(--color-primary)">Review</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="#" style="color:var(--color-secondary); text-decoration:none; font-size:0.85rem; font-weight:600;">Load More Applications <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <div class="dash-column">
+          
+          <!-- System Alerts / Internal News -->
+          <div class="dash-card">
+            <div class="card-header">
+              <h3 class="card-title">Staff Bulletins</h3>
+              <a href="#" class="card-action">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="announcement-list">
+              <a href="#" class="announcement-item">
+                <div class="metric-icon" style="width:50px; height:50px; background:#fde8e8; color:#e02424; font-size:1.2rem;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="announcement-content">
+                  <div class="announcement-title">Urgent: API Gateway Maintenance</div>
+                  <div class="announcement-desc">Payment gateway will be down tonight from 2AM to 4AM.</div>
+                  <div class="announcement-date">Today, 10:00 AM</div>
+                </div>
+              </a>
+              <a href="#" class="announcement-item">
+                <div class="metric-icon" style="width:50px; height:50px; background:#e1effe; color:#1c64f2; font-size:1.2rem;"><i class="fa-solid fa-users-gear"></i></div>
+                <div class="announcement-content">
+                  <div class="announcement-title">New Training Module</div>
+                  <div class="announcement-desc">All staff must complete the data privacy module by Friday.</div>
+                  <div class="announcement-date">Yesterday</div>
+                </div>
+              </a>
+              <a href="#" class="announcement-item">
+                <div class="metric-icon" style="width:50px; height:50px; background:#def7ec; color:#057a55; font-size:1.2rem;"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="announcement-content">
+                  <div class="announcement-title">Monthly Revenue Goal Met</div>
+                  <div class="announcement-desc">Property tax collection exceeded expectations this month.</div>
+                  <div class="announcement-date">25 May 2024</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="dash-card" style="background: transparent; box-shadow: none; padding: 0; border: none;">
+            <h3 class="card-title" style="margin-bottom:16px;">Admin Quick Actions</h3>
+            
+            <div class="quick-action-dark" style="background: var(--color-primary)">
+              <div class="qa-dark-left">
+                <div class="qa-dark-icon" style="border-color: #00d25b; color: #00d25b"><i class="fa-solid fa-plus"></i></div>
+                <div class="qa-dark-text">
+                  <h4>Create New User</h4>
+                  <p>Manually onboard a citizen</p>
+                </div>
+              </div>
+              <button class="btn-register-now" style="background: #00d25b; color: #fff;">Create User</button>
+            </div>
+
+            <div class="qa-grid">
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#e1effe; color:#1c64f2;"><i class="fa-solid fa-file-pdf"></i></div>
+                <div class="qa-text">
+                  <h5>Generate Report</h5>
+                  <p>Export weekly stats</p>
+                </div>
+              </a>
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <div class="qa-text">
+                  <h5>Draft Notice</h5>
+                  <p>Write public memo</p>
+                </div>
+              </a>
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#fde8e8; color:#e02424;"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="qa-text">
+                  <h5>Audit Logs</h5>
+                  <p>Review security events</p>
+                </div>
+              </a>
+              <a href="#" class="qa-card">
+                <div class="qa-icon-wrap" style="background:#def7ec; color:#057a55;"><i class="fa-solid fa-calendar-plus"></i></div>
+                <div class="qa-text">
+                  <h5>Update Calendar</h5>
+                  <p>Manage holidays</p>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
