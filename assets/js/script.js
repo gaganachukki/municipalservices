@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('active');
-      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+      const isOpen = navLinks.classList.contains('active');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      document.documentElement.style.overflow = isOpen ? 'hidden' : '';
     });
     
     // Close menu when clicking a link
@@ -37,7 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
         document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
       });
+    });
+
+    // Reset menu if window is resized to desktop view
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      }
     });
   }
 

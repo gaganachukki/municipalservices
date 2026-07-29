@@ -642,3 +642,328 @@ body.dashboard-body {
   font-size: 0.7rem;
   color: var(--text-muted);
 }
+
+
+/* Shared Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-md); /* Use md radius for dashboard instead of full pill for better alignment */
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.btn-primary:hover {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--gradient-gold);
+  color: var(--color-white);
+}
+.btn-secondary:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+
+/* Form Styles for Dashboard */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  font-size: 0.95rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  box-sizing: border-box; /* THIS FIXES THE OVERLAP */
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: #f9fafb;
+  background-clip: padding-box;
+  border: 1px solid #d1d5db;
+  appearance: none;
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: 0;
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25); /* Gold glow */
+}
+
+/* Simple validation styling */
+.validate-form .form-control:not(:placeholder-shown):invalid {
+  border-color: #ef4444;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23ef4444'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23ef4444' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.validate-form .form-control:not(:placeholder-shown):valid {
+  border-color: #10b981;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2310b981' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (1920px down to 320px)
+   ========================================================================== */
+
+/* Utility classes for mobile header */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-dark);
+  cursor: pointer;
+  margin-right: 15px;
+}
+.mobile-logo {
+  display: none;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  align-items: center;
+  gap: 8px;
+}
+.mobile-logo i {
+  color: var(--color-secondary);
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sidebar-overlay.active {
+  opacity: 1;
+}
+
+/* 1440px - Standard Desktop tweaks if needed */
+@media (max-width: 1440px) {
+  .dashboard-content {
+    padding: 24px;
+  }
+}
+
+/* 1024px - Tablets & Small Laptops */
+@media (max-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main-split {
+    flex-direction: column;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* 768px - Mobile Phones (Landscape) & Small Tablets */
+@media (max-width: 768px) {
+  /* Sidebar Off-canvas */
+  .sidebar {
+    position: fixed;
+    left: -260px; /* Hide off screen */
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  
+  /* Show Overlay */
+  .sidebar-overlay {
+    display: block;
+    pointer-events: none; /* Initially disabled */
+  }
+  .sidebar-overlay.active {
+    pointer-events: auto; /* Enable clicks when active */
+  }
+
+  /* Header Overhaul */
+  .top-header {
+    padding: 0 15px;
+    justify-content: space-between;
+  }
+  .mobile-menu-toggle {
+    display: block; /* Show hamburger */
+  }
+  .mobile-logo {
+    display: flex; /* Show Stackly logo in center */
+  }
+  .header-left .header-greeting,
+  .header-left .header-name,
+  .header-left div[style*="font-size:0.75rem"] {
+    display: none !important; /* Hide welcome text */
+  }
+  .header-right .user-info,
+  .header-right .fa-chevron-down {
+    display: none !important; /* Hide name/role in top right */
+  }
+  
+  /* Tables horizontally scrollable */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .data-table {
+    min-width: 600px; /* Ensure columns don't squish too much */
+  }
+
+  /* Forms single column */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .dashboard-content {
+    padding: 16px;
+  }
+}
+
+/* 425px & 375px & 320px - Mobile Phones (Portrait) */
+@media (max-width: 425px) {
+  .metrics-grid {
+    grid-template-columns: 1fr; /* Stack everything */
+  }
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .top-header {
+    height: 60px; /* Slimmer header */
+  }
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .mobile-logo {
+    font-size: 1.1rem;
+  }
+  .view-title {
+    font-size: 1.5rem;
+  }
+  /* Fix padding for very small screens */
+  .dashboard-content {
+    padding: 12px;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+}
+
+/* Initials Avatar Styling */
+.initials-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+  border: 2px solid var(--color-secondary);
+}
+@media (max-width: 425px) {
+  .initials-avatar {
+    font-size: 0.9rem;
+    border-width: 1px;
+  }
+}
+
+/* Fix Horizontal Overflow for Quick Services and similar rows on Mobile */
+@media (max-width: 768px) {
+  .services-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for cleaner look, or style it */
+    scrollbar-width: none; 
+  }
+  .services-row::-webkit-scrollbar {
+    display: none;
+  }
+  .service-icon-card {
+    min-width: 110px; /* Ensure they don't squish */
+    flex-shrink: 0;
+  }
+  
+  /* Also ensure any other inline grids don't overflow */
+  .grid-4, .grid-2 {
+    overflow-x: hidden;
+  }
+}
+
+/* Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.chart-card {
+  display: flex;
+  flex-direction: column;
+}
+.chart-container {
+  position: relative;
+  height: 300px; /* fixed height for charts */
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 1rem;
+}
+
+@media (max-width: 992px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

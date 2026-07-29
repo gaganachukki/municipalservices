@@ -43,7 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           btn.innerHTML = 'Success!';
           btn.style.backgroundColor = '#4CAF50';
-          form.reset();
+          
+          const actionUrl = form.getAttribute('action');
+          if (actionUrl && actionUrl !== '#' && actionUrl !== '') {
+            window.location.href = actionUrl;
+            return;
+          }
+          
+          // Redirect to 404 for all mock forms
+          window.location.href = '404.html';
           
           setTimeout(() => {
             btn.innerHTML = originalText;

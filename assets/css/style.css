@@ -228,6 +228,16 @@ img {
   align-items: center;
 }
 
+/* Desktop: hide mobile-only elements */
+.mobile-only {
+  display: none !important;
+}
+
+/* Desktop: nav-links-center renders inline */
+.nav-links-center {
+  display: contents;
+}
+
 .nav-item {
   font-family: var(--font-heading);
   font-weight: 500;
@@ -460,4 +470,33 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   align-items: center;
+}
+
+/* Fix Mobile Sidebar Scrolling */
+@media (max-width: 992px) {
+  .nav-links {
+    overflow-y: auto;
+    padding-bottom: 2rem;
+    /* Add smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Scrollbar styles matching the theme */
+  .nav-links::-webkit-scrollbar {
+    width: 4px;
+  }
+  .nav-links::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .nav-links::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+    border-radius: 4px;
+  }
+}
+
+/* Hide top navbar buttons on mobile */
+@media (max-width: 992px) {
+  .nav-buttons-top {
+    display: none !important;
+  }
 }

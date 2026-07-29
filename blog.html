@@ -67,7 +67,7 @@
     }
   </style>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -78,15 +78,35 @@
       </a>
       
       <div class="nav-links" style="position: absolute; left: 50%; transform: translateX(-50%);">
-        <a href="index.html" class="nav-item">Home</a>
+        <!-- Mobile sidebar header: logo + close -->
+        <div class="mobile-sidebar-header mobile-only">
+          <a href="index.html" class="logo-container">
+            <img src="assets/images/logo.webp" alt="STACKLY" style="height: 35px; width: auto; object-fit: contain;">
+          </a>
+          <button class="sidebar-close" onclick="document.querySelector('.nav-links').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active'); document.body.style.overflow='';">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Nav items -->
+        <div class="nav-links-center">
+          <a href="index.html" class="nav-item">Home</a>
         <a href="about.html" class="nav-item">About</a>
         <a href="departments.html" class="nav-item">Departments</a>
         <a href="services.html" class="nav-item">Services</a>
         <a href="blog.html" class="nav-item active">Blog</a>
         <a href="contact.html" class="nav-item">Contact</a>
+        </div>
+
+        <!-- Mobile sidebar footer: login -->
+        <a href="register.html" class="btn mobile-sidebar-login mobile-only" style="padding: 0.8rem 2.5rem; width: 80%; text-align: center; border: 1px solid var(--color-secondary); color: var(--color-secondary); background: transparent; margin-bottom: 10px;">Register</a>
+        <a href="login.html" class="btn btn-secondary mobile-sidebar-login mobile-only" style="padding: 0.8rem 2.5rem; width: 80%; text-align: center;">Login</a>
       </div>
       
-      <a href="login.html" class="btn btn-secondary" style="padding: 0.5rem 1.5rem;">Login</a>
+      <div class="nav-buttons-top" style="display: flex; gap: 10px;">
+        <a href="register.html" class="btn" style="padding: 0.5rem 1.5rem; border: 1px solid var(--color-secondary); color: var(--color-secondary); background: transparent;">Register</a>
+        <a href="login.html" class="btn btn-secondary" style="padding: 0.5rem 1.5rem;">Login</a>
+      </div>
       <button class="hamburger">
         <span></span>
         <span></span>
@@ -109,83 +129,193 @@
         <!-- Post 1 -->
         <div class="blog-card reveal delay-100">
           <div class="blog-img">
-            <span class="blog-badge">Latest News</span>
+            <img src="assets/images/blog_tree.webp" alt="Tree Plantation" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"><span class="blog-badge" style="z-index: 1;">Latest News</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">Oct 24, 2026 | By Admin</div>
             <h3 class="blog-title">City Council Approves New Green Cover Initiative</h3>
             <p style="font-size: 0.95rem;">A massive tree-plantation drive has been approved, targeting 100,000 new saplings by end of the year.</p>
-            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+            <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
           </div>
         </div>
 
         <!-- Post 2 -->
         <div class="blog-card reveal delay-200">
           <div class="blog-img">
-            <span class="blog-badge">Smart City</span>
+            <img src="assets/images/blog_wifi.webp" alt="Public Wi-Fi" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"><span class="blog-badge" style="z-index: 1;">Smart City</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">Oct 20, 2026 | By Tech Dept</div>
             <h3 class="blog-title">Free Wi-Fi Zones Expanded in Public Parks</h3>
             <p style="font-size: 0.95rem;">As part of the Smart City project, 20 more public parks will get free high-speed Wi-Fi access.</p>
-            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+            <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
           </div>
         </div>
 
         <!-- Post 3 -->
         <div class="blog-card reveal delay-300">
           <div class="blog-img">
-            <span class="blog-badge">Health</span>
+            <img src="assets/images/blog_health.webp" alt="Health Camp" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"><span class="blog-badge" style="z-index: 1;">Health</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">Oct 15, 2026 | By Health Dept</div>
             <h3 class="blog-title">Annual Mega Health Camp Announced</h3>
             <p style="font-size: 0.95rem;">The Health Department announces a free 3-day mega health camp covering all municipal wards.</p>
-            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+            <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
           </div>
         </div>
 
         <!-- Post 4 -->
         <div class="blog-card reveal delay-100">
           <div class="blog-img">
-            <span class="blog-badge">Notices</span>
+            <img src="assets/images/blog_tax.webp" alt="Tax Payment" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"><span class="blog-badge" style="z-index: 1;">Notices</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">Oct 10, 2026 | By Revenue Dept</div>
             <h3 class="blog-title">Final Reminder for Property Tax Payment</h3>
             <p style="font-size: 0.95rem;">Citizens are requested to pay their property tax before 31st Oct to avoid penalty charges.</p>
-            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+            <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
           </div>
         </div>
 
         <!-- Post 5 -->
         <div class="blog-card reveal delay-200">
           <div class="blog-img">
-            <span class="blog-badge">Events</span>
+            <img src="assets/images/blog_fest.webp" alt="Cultural Fest" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"><span class="blog-badge" style="z-index: 1;">Events</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">Oct 05, 2026 | By Cultural Dept</div>
             <h3 class="blog-title">Upcoming City Cultural Fest - Nov 2026</h3>
             <p style="font-size: 0.95rem;">Join us for the 3-day cultural extravaganza celebrating our city's heritage and arts.</p>
-            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+            <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
           </div>
         </div>
 
         <!-- Post 6 -->
         <div class="blog-card reveal delay-300">
           <div class="blog-img">
-            <span class="blog-badge">Community</span>
+            <img src="assets/images/blog_volunteer.webp" alt="Volunteer Program" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"><span class="blog-badge" style="z-index: 1;">Community</span>
           </div>
           <div class="blog-content">
             <div class="blog-meta">Sep 28, 2026 | By Admin</div>
             <h3 class="blog-title">Citizen Volunteer Program Launched</h3>
             <p style="font-size: 0.95rem;">Become a part of the city's growth by joining our newly launched citizen volunteer program.</p>
-            <a href="#" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+            <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
           </div>
         </div>
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- NEW SECTION 1: Featured Article Showcase -->
+  <section class="section">
+    <div class="container reveal">
+      <div class="hover-zoom" style="position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 400px; display: flex; align-items: flex-end; padding: 3rem;">
+        <img src="assets/images/img_9.webp" alt="Featured News" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(5,11,20,0.9), rgba(5,11,20,0.2)); z-index: -1;"></div>
+        <div style="position: relative; z-index: 1; max-width: 800px;">
+          <span class="blog-badge" style="position: static; display: inline-block; margin-bottom: 1rem;">Trending</span>
+          <h2 style="color: var(--color-white); font-size: 2.5rem; margin-bottom: 1rem;">Major Infrastructure Upgrade Announced for Downtown Sector</h2>
+          <p style="color: #d1d5db; font-size: 1.1rem; margin-bottom: 1.5rem;">The city council has approved a multi-million dollar budget to revamp the downtown infrastructure, promising better roads and smart street lighting by 2027.</p>
+          <a href="404.html" class="btn btn-primary ripple">Read Full Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 2: Upcoming City Events -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom: 3rem;">
+        <h2 style="color: var(--color-primary); font-size: 2.5rem; margin-bottom: 1rem;">Upcoming City Events</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">Mark your calendars for these exciting municipal events.</p>
+      </div>
+      <div class="grid-2">
+        <div class="hover-elevate reveal delay-100" style="background: var(--color-white); border-radius: var(--radius-md); display: flex; align-items: center; padding: 1.5rem; gap: 1.5rem; box-shadow: var(--shadow-sm);">
+          <div class="pop-badge" style="background: var(--color-primary); color: var(--color-white); text-align: center; padding: 1rem; border-radius: var(--radius-sm); min-width: 80px;">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--color-secondary);">12</div>
+            <div style="font-size: 0.85rem; text-transform: uppercase;">Nov</div>
+          </div>
+          <div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">City Marathon 2026</h4>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i> Central Park Stadium</p>
+            <a href="404.html" style="color: var(--color-secondary); font-size: 0.9rem; font-weight: 600;">Register Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="hover-elevate reveal delay-200" style="background: var(--color-white); border-radius: var(--radius-md); display: flex; align-items: center; padding: 1.5rem; gap: 1.5rem; box-shadow: var(--shadow-sm);">
+          <div class="pop-badge" style="background: var(--color-primary); color: var(--color-white); text-align: center; padding: 1rem; border-radius: var(--radius-sm); min-width: 80px;">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--color-secondary);">25</div>
+            <div style="font-size: 0.85rem; text-transform: uppercase;">Nov</div>
+          </div>
+          <div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Townhall Tech Summit</h4>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i> Municipal Auditorium</p>
+            <a href="404.html" style="color: var(--color-secondary); font-size: 0.9rem; font-weight: 600;">View Agenda <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 3: Citizen Voices -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom: 3rem;">
+        <h2 style="color: var(--color-primary); font-size: 2.5rem; margin-bottom: 1rem;">Citizen Voices</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">Hear what our community has to say about the new digital initiatives.</p>
+      </div>
+      <div class="grid-3">
+        <div class="hover-elevate reveal delay-100" style="background: var(--color-white); padding: 2rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-secondary); box-shadow: var(--shadow-sm);">
+          <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: #f3f4f6; position: absolute; top: 1rem; right: 1.5rem;"></i>
+          <p style="font-style: italic; color: #4b5563; margin-bottom: 1.5rem; font-size: 0.95rem; position: relative; z-index: 1;">"The new property tax portal is incredibly fast. I paid my taxes in under 5 minutes without having to stand in any long queues at the office!"</p>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-secondary); font-weight: bold;">R</div>
+            <div>
+              <h4 style="font-size: 1rem; margin: 0;">Rajesh Kumar</h4>
+              <span style="font-size: 0.8rem; color: var(--color-text-muted);">Local Resident</span>
+            </div>
+          </div>
+        </div>
+        <div class="hover-elevate reveal delay-200" style="background: var(--color-white); padding: 2rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-secondary); box-shadow: var(--shadow-sm);">
+          <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: #f3f4f6; position: absolute; top: 1rem; right: 1.5rem;"></i>
+          <p style="font-style: italic; color: #4b5563; margin-bottom: 1.5rem; font-size: 0.95rem; position: relative; z-index: 1;">"I applied for my trade license renewal through the mobile app. The UI is so intuitive, and the approval came through in just two days."</p>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-secondary); font-weight: bold;">S</div>
+            <div>
+              <h4 style="font-size: 1rem; margin: 0;">Sarah Ahmed</h4>
+              <span style="font-size: 0.8rem; color: var(--color-text-muted);">Business Owner</span>
+            </div>
+          </div>
+        </div>
+        <div class="hover-elevate reveal delay-300" style="background: var(--color-white); padding: 2rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-secondary); box-shadow: var(--shadow-sm);">
+          <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: #f3f4f6; position: absolute; top: 1rem; right: 1.5rem;"></i>
+          <p style="font-style: italic; color: #4b5563; margin-bottom: 1.5rem; font-size: 0.95rem; position: relative; z-index: 1;">"Using the grievance portal, I reported a broken streetlight. It was assigned a tracking ID immediately and fixed the very next evening."</p>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-secondary); font-weight: bold;">A</div>
+            <div>
+              <h4 style="font-size: 1rem; margin: 0;">Anil Sharma</h4>
+              <span style="font-size: 0.8rem; color: var(--color-text-muted);">Community Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 4: Newsletter Subscription -->
+  <section class="section section-dark" style="background: var(--color-primary); padding: 4rem 0;">
+    <div class="container reveal-scale">
+      <div style="background: linear-gradient(135deg, #0d1b2a 0%, #1a2a40 100%); padding: 3rem; border-radius: var(--radius-lg); text-align: center; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
+        <i class="fa-regular fa-envelope-open bounce-icon" style="font-size: 3rem; color: var(--color-secondary); margin-bottom: 1rem;"></i>
+        <h2 style="color: var(--color-white); font-size: 2rem; margin-bottom: 0.5rem;">Subscribe to City Updates</h2>
+        <p style="color: #a0aabf; font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Don't miss out on important announcements, road closures, and community events. Get our weekly newsletter delivered straight to your inbox.</p>
+        <form style="display: flex; gap: 0.5rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+          <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 1rem 1.5rem; border-radius: var(--radius-full); border: none; font-size: 1rem; outline: none; min-width: 250px;">
+          <button type="submit" class="btn btn-primary ripple" style="padding: 1rem 2rem;">Subscribe</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -198,13 +328,13 @@
         bottom: 0;
         width: 30px;
         height: 2px;
-        background-color: #00d25b;
+        background-color: var(--color-secondary);
       }
       .cyber-links a {
         transition: color 0.2s;
       }
       .cyber-links a:hover {
-        color: #00d25b !important;
+        color: var(--color-secondary) !important;
       }
       @media (max-width: 992px) {
         .cyber-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -217,34 +347,35 @@
       <div class="cyber-grid" style="display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.5fr 1.5fr; gap: 2rem; margin-bottom: 3rem;">
         
         <div class="footer-brand">
-          <a href="index.html" class="logo-container" style="display: inline-flex; align-items: center; margin-bottom: 1.5rem;">
+          <a href="index.html" class="logo-container" style="display: inline-flex; align-items: center; margin-bottom: 0.5rem;">
             <img src="assets/images/logo.webp" alt="Stackly Logo" style="height: 35px; width: auto; object-fit: contain;">
           </a>
-          <p style="margin-bottom: 2rem; line-height: 1.6; font-size: 0.95rem;">AI-driven next-generation cybersecurity platform protecting home users and corporate endpoints.</p>
-          <div class="social-icons" style="display: flex; gap: 1rem;">
-            <a href="#" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='#00d25b'" onmouseout="this.style.background='#111827'"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-            <a href="#" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='#00d25b'" onmouseout="this.style.background='#111827'"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-            <a href="#" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s;" onmouseover="this.style.background='#00d25b'" onmouseout="this.style.background='#111827'"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <p style="margin-bottom: 2rem; line-height: 1.6; font-size: 0.95rem;">A unified digital platform delivering smart, transparent, and citizen-centric municipal services.</p>
+          <div class="social-icons" style="display: flex; gap: 1rem; align-items: center;">
+            <a href="404.html" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s; font-size: 1.1rem;" onmouseover="this.style.background='var(--color-secondary)'" onmouseout="this.style.background='#111827'"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s; font-size: 1.1rem;" onmouseover="this.style.background='var(--color-secondary)'" onmouseout="this.style.background='#111827'"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s; font-size: 1.1rem;" onmouseover="this.style.background='var(--color-secondary)'" onmouseout="this.style.background='#111827'"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-icon" style="background: #111827; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s; font-size: 1.1rem;" onmouseover="this.style.background='var(--color-secondary)'" onmouseout="this.style.background='#111827'"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
         
         <div>
           <h4 class="cyber-title" style="color: white; font-size: 1.1rem; font-weight: 600; margin-bottom: 2rem; position: relative; padding-bottom: 0.5rem;">Quick Links</h4>
           <ul class="cyber-links" style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Home</a></li>
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Antivirus</a></li>
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Internet Security</a></li>
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Business Solutions</a></li>
+            <li style="margin-bottom: 1rem;"><a href="index.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Home</a></li>
+            <li style="margin-bottom: 1rem;"><a href="about.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">About Us</a></li>
+            <li style="margin-bottom: 1rem;"><a href="services.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Services</a></li>
+            <li style="margin-bottom: 1rem;"><a href="departments.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Departments</a></li>
           </ul>
         </div>
         
         <div>
           <h4 class="cyber-title" style="color: white; font-size: 1.1rem; font-weight: 600; margin-bottom: 2rem; position: relative; padding-bottom: 0.5rem;">Company</h4>
           <ul class="cyber-links" style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">About Us</a></li>
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Help Desk Support</a></li>
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
-            <li style="margin-bottom: 1rem;"><a href="#" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Terms & Conditions</a></li>
+            <li style="margin-bottom: 1rem;"><a href="contact.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Contact Us</a></li>
+            <li style="margin-bottom: 1rem;"><a href="404.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Grievance</a></li>
+            <li style="margin-bottom: 1rem;"><a href="404.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 1rem;"><a href="404.html" style="color: inherit; text-decoration: none; font-size: 0.95rem;">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -253,15 +384,15 @@
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem;">
               <svg style="margin-top: 3px; min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>support@stackly.com</span>
+              <span>support@municipalservices.gov</span>
             </li>
             <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem;">
               <svg style="margin-top: 3px; min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>+1 (800) 555-0199</span>
+              <span>+91 1800 425 3333</span>
             </li>
             <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem;">
               <svg style="margin-top: 3px; min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>123 Security Blvd, NY 10012</span>
+              <span>Municipal Corporation, Salem, Tamil Nadu</span>
             </li>
           </ul>
         </div>
@@ -274,8 +405,8 @@
         </div>
       </div>
       
-      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 0; text-align: center; display: flex; justify-content: center; font-size: 0.9rem;">
-        <p style="margin: 0;">&copy; 2026 Stackly Cyber Security. All rights reserved.</p>
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 0 0.5rem 0; text-align: center; display: flex; justify-content: center; font-size: 0.9rem;">
+        <p style="margin: 0;">&copy; 2026 Municipal Services Portal. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -284,3 +415,6 @@
   <script src="assets/js/animation.js"></script>
 </body>
 </html>
+
+
+
