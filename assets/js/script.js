@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('active');
       const isOpen = navLinks.classList.contains('active');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-      document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+      document.body.style.overflowY = isOpen ? 'hidden' : 'auto';
+      document.documentElement.style.overflowY = isOpen ? 'hidden' : 'auto';
     });
     
     // Close menu when clicking a link
@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
       item.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
+        document.body.style.overflowY = 'auto';
+        document.documentElement.style.overflowY = 'auto';
       });
     });
 
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
+        document.body.style.overflowY = 'auto';
+        document.documentElement.style.overflowY = 'auto';
       }
     });
   }

@@ -16,6 +16,9 @@
   --status-rejected-text: #9B1C1C;
 }
 
+html:has(body.dashboard-body) {
+  overflow-x: hidden;
+}
 body.dashboard-body {
   margin: 0;
   padding: 0;
@@ -25,6 +28,10 @@ body.dashboard-body {
   display: flex;
   height: 100vh;
   overflow: hidden;
+  max-width: 100vw;
+}
+body.dashboard-body *, body.dashboard-body *::before, body.dashboard-body *::after {
+  box-sizing: border-box;
 }
 
 /* Sidebar */
@@ -176,6 +183,7 @@ body.dashboard-body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-width: 0; /* Critical for mobile responsiveness with tables */
 }
 
 /* Top Header */
@@ -224,7 +232,8 @@ body.dashboard-body {
   border: 1px solid rgba(0,0,0,0.05);
   border-radius: var(--radius-full);
   padding: 8px 16px;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
 }
 .search-bar i {
   color: var(--text-muted);
@@ -314,7 +323,10 @@ body.dashboard-body {
 .dashboard-content {
   padding: 24px 32px;
   overflow-y: auto;
+  overflow-x: hidden;
   flex-grow: 1;
+  min-width: 0;
+  width: 100%;
 }
 
 /* Metrics Row */
@@ -682,12 +694,15 @@ body.dashboard-body {
 
 .btn-outline {
   background: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  transition: all var(--transition-fast);
 }
 .btn-outline:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
 }
 
 
@@ -702,6 +717,12 @@ body.dashboard-body {
   font-weight: 600;
   color: var(--color-dark);
   font-size: 0.95rem;
+}
+
+.form-section {
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .form-control {
@@ -803,10 +824,24 @@ body.dashboard-body {
 
 /* 768px - Mobile Phones (Landscape) & Small Tablets */
 @media (max-width: 768px) {
+  /* Stack all grids to single column */
+  .metrics-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .charts-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .qa-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   /* Sidebar Off-canvas */
   .sidebar {
     position: fixed;
-    left: -260px; /* Hide off screen */
+    left: -260px;
     top: 0;
     bottom: 0;
     z-index: 1000;
@@ -816,14 +851,14 @@ body.dashboard-body {
   .sidebar.open {
     left: 0;
   }
-  
+
   /* Show Overlay */
   .sidebar-overlay {
     display: block;
-    pointer-events: none; /* Initially disabled */
+    pointer-events: none;
   }
   .sidebar-overlay.active {
-    pointer-events: auto; /* Enable clicks when active */
+    pointer-events: auto;
   }
 
   /* Header Overhaul */
@@ -832,28 +867,29 @@ body.dashboard-body {
     justify-content: space-between;
   }
   .mobile-menu-toggle {
-    display: block; /* Show hamburger */
+    display: block;
   }
   .mobile-logo {
-    display: flex; /* Show Stackly logo in center */
+    display: flex;
   }
   .header-left .header-greeting,
   .header-left .header-name,
   .header-left div[style*="font-size:0.75rem"] {
-    display: none !important; /* Hide welcome text */
+    display: none !important;
   }
   .header-right .user-info,
   .header-right .fa-chevron-down {
-    display: none !important; /* Hide name/role in top right */
+    display: none !important;
   }
-  
-  /* Tables horizontally scrollable */
+
+  /* Tables horizontally scrollable inside their container only */
   .table-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    max-width: 100%;
   }
   .data-table {
-    min-width: 600px; /* Ensure columns don't squish too much */
+    min-width: 600px;
   }
 
   /* Forms single column */
@@ -862,9 +898,75 @@ body.dashboard-body {
   .grid-2 {
     grid-template-columns: 1fr !important;
   }
-  
+
+  /* Dashboard content area */
   .dashboard-content {
     padding: 16px;
+  }
+
+  /* Cards: allow text to wrap, don't clip */
+  .dash-card {
+    max-width: 100%;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Flex children must be allowed to shrink */
+  .dash-column {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Announcement text must shrink inside flex row */
+  .announcement-item {
+    min-width: 0;
+  }
+  .announcement-content {
+    min-width: 0;
+    overflow: hidden;
+  }
+  .announcement-title,
+  .announcement-desc {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Card header: wrap on mobile */
+  .card-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+
+  /* Tables: horizontal scroll inside their wrapper */
+  [style*="overflow-x: auto"],
+  .table-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+  .data-table {
+    min-width: 550px;
+  }
+
+  /* Charts */
+  .chart-container {
+    height: 250px;
+  }
+
+  /* Quick action dark bar - stack on mobile */
+  .quick-action-dark {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .qa-dark-left {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -893,6 +995,15 @@ body.dashboard-body {
   .dashboard-content {
     padding: 12px;
   }
+}
+
+.stat-card {
+  padding: 1.5rem;
+  background: white;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 425px) {
   .stat-card {
     padding: 1rem;
   }
@@ -918,26 +1029,24 @@ body.dashboard-body {
   }
 }
 
-/* Fix Horizontal Overflow for Quick Services and similar rows on Mobile */
+/* Fix Horizontal Overflow for Quick Services on Mobile */
 @media (max-width: 768px) {
   .services-row {
-    display: flex;
+    display: flex !important;
+    grid-template-columns: none !important;
     overflow-x: auto;
     gap: 16px;
     padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
-    /* Hide scrollbar for cleaner look, or style it */
-    scrollbar-width: none; 
+    scrollbar-width: none;
   }
   .services-row::-webkit-scrollbar {
     display: none;
   }
   .service-icon-card {
-    min-width: 110px; /* Ensure they don't squish */
+    min-width: 100px;
     flex-shrink: 0;
   }
-  
-  /* Also ensure any other inline grids don't overflow */
   .grid-4, .grid-2 {
     overflow-x: hidden;
   }
@@ -950,12 +1059,18 @@ body.dashboard-body {
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.grid-2, .grid-4, .charts-grid, .metrics-grid, .qa-grid, .dashboard-grid {
+  min-width: 0;
+  max-width: 100%;
+}
 .chart-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .chart-container {
   position: relative;
+  min-width: 0;
   height: 300px; /* fixed height for charts */
   width: 100%;
   flex-grow: 1;
@@ -966,4 +1081,14 @@ body.dashboard-body {
   .charts-grid {
     grid-template-columns: 1fr;
   }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-view {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }

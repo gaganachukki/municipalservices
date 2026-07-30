@@ -89,3 +89,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   };
 });
+
+
+// Catch all unused buttons and links in the dashboard
+document.addEventListener('DOMContentLoaded', () => {
+    const interactables = document.querySelectorAll('button, a');
+    interactables.forEach(el => {
+        // Skip specific functional elements
+        if (el.hasAttribute('data-target')) return;
+        if (el.classList.contains('hamburger')) return;
+        if (el.classList.contains('profile-toggle')) return;
+        
+        // Skip links that already have a valid destination
+        if (el.tagName.toLowerCase() === 'a') {
+            const href = el.getAttribute('href');
+            if (href && href !== '#' && href !== '') return;
+        }
+
+        // Skip submit buttons (handled by forms)
+        if (el.tagName.toLowerCase() === 'button' && el.type === 'submit') {
+            return;
+        }
+        
+        // Skip elements that already have an onclick handler
+        if (el.hasAttribute('onclick')) return;
+
+        // Redirect all other unused buttons to 404
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '404.html';
+        });
+    });
+});

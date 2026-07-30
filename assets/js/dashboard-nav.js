@@ -28,8 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userNameElem) {
       userNameElem.textContent = savedEmail;
       // Optionally adjust styling so long emails don't break layout
-      userNameElem.style.fontSize = '0.8rem'; 
       userNameElem.style.wordBreak = 'break-all';
+      userNameElem.style.maxWidth = '200px';
+    }
+
+    // Populate Profile Form Inputs if they exist
+    const profileFirstName = document.getElementById('profileFirstName');
+    const profileLastName = document.getElementById('profileLastName');
+    const profileEmail = document.getElementById('profileEmail');
+
+    if (profileFirstName) {
+      profileFirstName.value = nameParts.length >= 1 ? nameParts[0].charAt(0).toUpperCase() + nameParts[0].slice(1) : '';
+    }
+    if (profileLastName) {
+      // If there are multiple parts (like a dot or underscore), use the last part as Last Name. Otherwise, just use 'User' or leave blank.
+      profileLastName.value = nameParts.length > 1 ? nameParts[nameParts.length - 1].charAt(0).toUpperCase() + nameParts[nameParts.length - 1].slice(1) : 'User';
+    }
+    if (profileEmail) {
+      profileEmail.value = savedEmail;
     }
 
     // Update Profile Logo (Initials)
